@@ -27,3 +27,15 @@ if (isUser(rawUserData)) {
     console.log(rawUserData.id);
     console.log(rawUserData.name); // you have to check type safe before initialize into the code
 }
+
+// Tuples concept -> derive a union from the array
+
+const ROLES = ['admin', 'moderator', 'user'] as const; // normal array becomes readonly array you can't modify later
+
+type Roles = (typeof ROLES)[number]; // here, using number between array bracket specifies the index number of the array
+
+const setRoleHandler = (r: Roles): string => {
+    return r;
+};
+
+console.log(setRoleHandler('admin')); // here, already mentioned types only can passed thorugh this function
