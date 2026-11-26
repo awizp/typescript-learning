@@ -28,6 +28,8 @@ if (isUser(rawUserData)) {
     console.log(rawUserData.name); // you have to check type safe before initialize into the code
 }
 
+// method 2 is the safest method to check the type safe of the raw data
+
 // Tuples concept -> derive a union from the array
 
 const ROLES = ['admin', 'moderator', 'user'] as const; // normal array becomes readonly array you can't modify later
